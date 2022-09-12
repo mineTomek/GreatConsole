@@ -1,0 +1,12 @@
+/Users/mineTomek/Desktop/Projects/GreatConsole/GreatConsole/bin/Debug/net6.0/GreatConsole.deps.json
+/Users/mineTomek/Desktop/Projects/GreatConsole/GreatConsole/bin/Debug/net6.0/GreatConsole.dll
+/Users/mineTomek/Desktop/Projects/GreatConsole/GreatConsole/bin/Debug/net6.0/GreatConsole.pdb
+/Users/mineTomek/Desktop/Projects/GreatConsole/GreatConsole/obj/Debug/net6.0/GreatConsole.csproj.AssemblyReference.cache
+/Users/mineTomek/Desktop/Projects/GreatConsole/GreatConsole/obj/Debug/net6.0/GreatConsole.GeneratedMSBuildEditorConfig.editorconfig
+/Users/mineTomek/Desktop/Projects/GreatConsole/GreatConsole/obj/Debug/net6.0/GreatConsole.AssemblyInfoInputs.cache
+/Users/mineTomek/Desktop/Projects/GreatConsole/GreatConsole/obj/Debug/net6.0/GreatConsole.AssemblyInfo.cs
+/Users/mineTomek/Desktop/Projects/GreatConsole/GreatConsole/obj/Debug/net6.0/GreatConsole.csproj.CoreCompileInputs.cache
+/Users/mineTomek/Desktop/Projects/GreatConsole/GreatConsole/obj/Debug/net6.0/GreatConsole.dll
+/Users/mineTomek/Desktop/Projects/GreatConsole/GreatConsole/obj/Debug/net6.0/refint/GreatConsole.dll
+/Users/mineTomek/Desktop/Projects/GreatConsole/GreatConsole/obj/Debug/net6.0/GreatConsole.pdb
+/Users/mineTomek/Desktop/Projects/GreatConsole/GreatConsole/obj/Debug/net6.0/ref/GreatConsole.dll

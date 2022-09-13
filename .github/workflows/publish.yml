@@ -2,7 +2,7 @@ name: Publich To NuGet
 on:
   push:
     branches:
-      - main # Default release branch, may also be named 'master' or 'develop'
+      - master # Default release branch, may also be named 'master' or 'develop'
   workflow_dispatch:
 jobs:
   publish:

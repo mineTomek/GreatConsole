@@ -4,6 +4,13 @@
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+
+    <PackageId>GreatConsole</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>mineTomek</Authors>
+
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/mineTomek/GreatConsole</RepositoryUrl>
   </PropertyGroup>
 
 </Project>

@@ -8,11 +8,11 @@ NuGet package for various console utilities
 With this package it is easy to change colors of printed text:
 
 ```csharp
-using Console = ConsoleUtilities.ConsoleColors; // You can transform all your apps
+using Console = GreatConsole.ConsoleColors; // You can transform all your apps
                                                 // by replacing "System.Console" with "ConsoleColors" class.
                                                 // And everything will still work!
                                                 
-using static ConsoleUtilities.ConsoleColors.AllowedColor; // Don't type 
+using static GreatConsole.ConsoleColors.AllowedColor; // Don't have to type 
                                                           // "ConsoleUtilities.ConsoleColors.AllowedColor"
                                                           // all the time.
                                                           
@@ -24,7 +24,7 @@ Don't want whole line to be same color?
 We got you covered!
 
 ```csharp
-using Console = ConsoleUtilities.ConsoleColors;
+using Console = GreatConsole.ConsoleColors;
 
 Console.WriteFromString("&b'Hello &r'World&g!"); // This code will print blue (&b') "Hello",
                                                  // red (&r') "World" and green (&g') "!".

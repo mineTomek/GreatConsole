@@ -25,7 +25,7 @@ jobs:
           PROJECT_FILE_PATH: GreatConsole/GreatConsole.csproj
           
           # Configuration to build and package
-          BUILD_CONFIGURATION: Release
+          # BUILD_CONFIGURATION: Release
           
           # Platform target to compile (default is empty/AnyCPU)
           # BUILD_PLATFORM: x64          
@@ -57,5 +57,6 @@ jobs:
           # Flag to toggle pushing symbols along with nuget package to the server, disabled by default
           # INCLUDE_SYMBOLS: false
           
-          run: echo PACKAGE_NAME
+      - name: Output path
+        run: echo PACKAGE_NAME
         

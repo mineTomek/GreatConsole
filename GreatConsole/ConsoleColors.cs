@@ -102,7 +102,7 @@ public static class ConsoleColors
 
         Dictionary<string, AllowedColor> textWithColors = new Dictionary<string, AllowedColor>();
 
-        Regex colorCodeRegex = new Regex(@"&[a-z\.]{1,2}'");
+        Regex colorCodeRegex = new Regex(@"&[a-z]{1,3}'");
 
         ColorParser parser = new ColorParser(str);
 

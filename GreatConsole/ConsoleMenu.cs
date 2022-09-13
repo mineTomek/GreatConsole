@@ -11,10 +11,13 @@ public class ConsoleMenu
 
     readonly MenuOption[] options;
 
-    public ConsoleMenu(MenuOption[] _options, AllowedColor _arrowColor = Yellow)
+    readonly string message;
+
+    public ConsoleMenu(string _message, MenuOption[] _options, AllowedColor _arrowColor = Yellow)
     {
         arrowColor = _arrowColor;
         options = _options;
+        message = _message;
     }
 
     public (int, string) Show(int startIndex = 0)
@@ -27,7 +30,7 @@ public class ConsoleMenu
         {
             Console.Clear();
 
-            Console.WriteLine("Choose Exercise:");
+            Console.WriteLine(message);
 
             for (int i = 0; i < options.Length; i++)
             {

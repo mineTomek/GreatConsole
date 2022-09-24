@@ -1,5 +1,8 @@
 ﻿# ConsoleUtilities
 
+[![youtube](https://socialize-md.vercel.app/api/badge/youtube)](https://www.youtube.com/channel/UC-ytTDqZqvtTyLThRujjOyw)
+[![website](https://socialize-md.vercel.app/api/badge/web)](https://www.tomeklukomski.pl)
+
 NuGet package for various console utilities
 
 
@@ -74,6 +77,3 @@ You have two options:
 
 - Go to [NuGet page](https://nuget.org/packages/GreatConsole) of this project and download it.
 - In Visual Studio's menu bar go to `Project >> Manage NuGet Packages` and find this package.
-
-[![youtube](https://socialize-md.vercel.app/api/badge/youtube)](https://www.youtube.com/channel/UC-ytTDqZqvtTyLThRujjOyw)
-[![website](https://socialize-md.vercel.app/api/badge/web)](tomeklukomski.pl)

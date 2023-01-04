@@ -1,8 +1,5 @@
 ﻿# ConsoleUtilities
 
-[![youtube](https://socialize-md.vercel.app/api/badge/youtube)](https://www.youtube.com/channel/UC-ytTDqZqvtTyLThRujjOyw)
-[![website](https://socialize-md.vercel.app/api/badge/web)](https://www.tomeklukomski.pl)
-
 NuGet package for various console utilities
 
 

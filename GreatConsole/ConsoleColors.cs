@@ -113,7 +113,7 @@ public static class ConsoleColors
     {
         char currentChar;
         readonly string str;
-        int index;
+        int index = 0;
         AllowedColor printColor;
 
         public ColorParser(string _str)
@@ -168,9 +168,7 @@ public static class ConsoleColors
                 colorStamp += currentChar;
             }
 
-            colorStamp = colorStamp.TrimEnd('\'');
-
-            switch (colorStamp)
+            switch (colorStamp.TrimEnd('\''))
             {
                 case "":
                     printColor = AllowedColor.White;
@@ -225,9 +223,6 @@ public static class ConsoleColors
                     break;
                 default:
                     printColor = AllowedColor.White;
-                    NewLine();
-                    WriteLine("Invalid color stamp", AllowedColor.Red);
-                    NewLine();
                     break;
             }
         }
@@ -253,4 +248,3 @@ public static class ConsoleColors
         White
     }
 }
-

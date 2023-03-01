@@ -166,6 +166,11 @@ public static class ConsoleColors
             {
                 Advance();
                 colorStamp += currentChar;
+
+                if (colorStamp.Length >= 2)
+                {
+                    break;
+                }
             }
 
             switch (colorStamp.TrimEnd('\''))

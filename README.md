@@ -9,7 +9,7 @@ NuGet package for various console utilities
 
 ```csharp
 // You can transform all your apps  by replacing "System.Console" with "ConsoleColors" class.
-// And everything will still work!
+// And (almost) everything will still work!
 using Console = GreatConsole.ConsoleColors;
 
 // You don't have to type "ConsoleUtilities.ConsoleColors.AllowedColor" all the time.

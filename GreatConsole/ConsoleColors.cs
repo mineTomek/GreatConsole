@@ -1,6 +1,4 @@
-﻿using System.Text.RegularExpressions;
-
-namespace GreatConsole;
+﻿namespace GreatConsole;
 
 public static class ConsoleColors
 {

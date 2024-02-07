@@ -1,6 +1,4 @@
-﻿using System.Text.RegularExpressions;
-
-namespace GreatConsole;
+﻿namespace GreatConsole;
 
 public static class ConsoleColors
 {
@@ -53,9 +51,9 @@ public static class ConsoleColors
         }
     }
 
-    public static string ReadLine(AllowedColor? color = null)
+    public static string? ReadLine(AllowedColor? color = null)
     {
-        string output = null;
+        string? output = null;
 
         if (color == null)
         {
@@ -164,6 +162,11 @@ public static class ConsoleColors
             {
                 Advance();
                 colorStamp += currentChar;
+
+                if (colorStamp.Length >= 2)
+                {
+                    break;
+                }
             }
 
             switch (colorStamp.TrimEnd('\''))

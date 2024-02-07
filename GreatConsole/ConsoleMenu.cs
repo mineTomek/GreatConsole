@@ -1,13 +1,11 @@
-﻿using Console = GreatConsole.ConsoleColors;
-using static GreatConsole.ConsoleColors.AllowedColor;
-using System;
+﻿using static GreatConsole.ConsoleColors.AllowedColor;
 using static GreatConsole.ConsoleColors;
 
 namespace GreatConsole;
 
 public class ConsoleMenu
 {
-    readonly Console.AllowedColor arrowColor;
+    readonly AllowedColor arrowColor;
 
     readonly MenuOption[] options;
 
@@ -28,24 +26,24 @@ public class ConsoleMenu
 
         while (!selected)
         {
-            Console.Clear();
+            Clear();
 
-            Console.WriteLine(message);
+            WriteLine(message);
 
             for (int i = 0; i < options.Length; i++)
             {
                 if (i == selectedIndex)
                 {
-                    Console.Write("\t> ", arrowColor);
-                    Console.WriteLine(options[i].name, options[i].selectedColor);
+                    Write("\t> ", arrowColor);
+                    WriteLine(options[i].name, options[i].selectedColor);
                 } else
                 {
-                    Console.Write("\t  ");
-                    Console.WriteLine(options[i].name, options[i].standardColor);
+                    Write("\t  ");
+                    WriteLine(options[i].name, options[i].standardColor);
                 }
             }
 
-            ConsoleKey key = Console.ReadKey().Key;
+            ConsoleKey key = ReadKey().Key;
 
             switch (key)
             {
@@ -72,7 +70,7 @@ public class ConsoleMenu
             }
         }
 
-        Console.NewLine();
+        NewLine();
 
         return (selectedIndex, options[selectedIndex].name);
     }
@@ -85,7 +83,7 @@ public class ConsoleMenu
 
         public MenuOption(object _name, AllowedColor _standardColor = Gray, AllowedColor _selectedColor = White)
         {
-            name = _name.ToString();
+            name = _name.ToString()!;
             standardColor = _standardColor;
             selectedColor = _selectedColor;
         }

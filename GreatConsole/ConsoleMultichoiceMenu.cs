@@ -1,12 +1,11 @@
-﻿using Console = GreatConsole.ConsoleColors;
-using static GreatConsole.ConsoleColors.AllowedColor;
+﻿using static GreatConsole.ConsoleColors.AllowedColor;
 using static GreatConsole.ConsoleColors;
 
 namespace GreatConsole;
 
 public class ConsoleMultichoiceMenu
 {
-    readonly Console.AllowedColor arrowColor;
+    readonly AllowedColor arrowColor;
 
     readonly MenuOption[] options;
 
@@ -27,25 +26,25 @@ public class ConsoleMultichoiceMenu
 
         while (true)
         {
-            Console.Clear();
+            Clear();
 
-            Console.WriteLine(message);
+            WriteLine(message);
 
             for (int i = 0; i < options.Length; i++)
             {
                 if (i == pointingIndex)
                 {
-                    Console.Write("\t> ", arrowColor);
+                    Write("\t> ", arrowColor);
                 }
                 else
                 {
-                    Console.Write("\t  ");
+                    Write("\t  ");
                 }
 
-                Console.WriteLine(options[i].name, selectedIndexes.Contains(i) ? options[i].selectedColor : options[i].standardColor);
+                WriteLine(options[i].name, selectedIndexes.Contains(i) ? options[i].selectedColor : options[i].standardColor);
             }
 
-            ConsoleKey key = Console.ReadKey().Key;
+            ConsoleKey key = ReadKey().Key;
 
             switch (key)
             {

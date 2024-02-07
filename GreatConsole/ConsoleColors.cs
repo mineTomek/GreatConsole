@@ -53,9 +53,9 @@ public static class ConsoleColors
         }
     }
 
-    public static string ReadLine(AllowedColor? color = null)
+    public static string? ReadLine(AllowedColor? color = null)
     {
-        string output = null;
+        string? output = null;
 
         if (color == null)
         {

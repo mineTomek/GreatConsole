@@ -87,7 +87,7 @@ public class ConsoleMultichoiceMenu
         public AllowedColor standardColor;
         public AllowedColor selectedColor;
 
-        public MenuOption(object _name, AllowedColor _standardColor = Gray, AllowedColor _selectedColor = White)
+        public MenuOption(object _name, AllowedColor _standardColor = DarkYellow, AllowedColor _selectedColor = White)
         {
             name = _name.ToString()!;
             standardColor = _standardColor;

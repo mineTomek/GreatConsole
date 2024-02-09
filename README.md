@@ -2,7 +2,6 @@
 
 NuGet package for various console utilities
 
-
 ## What does it do
 
 ### With this package it is easy to change colors of printed text:
@@ -14,7 +13,7 @@ using Console = GreatConsole.ConsoleColors;
 
 // You don't have to type "ConsoleUtilities.ConsoleColors.AllowedColor" all the time.
 using static GreatConsole.ConsoleColors.AllowedColor;
-                                                          
+
 Console.WriteLine("Hello World!", Green); // It will pring "Hello World!" in green
 ```
 
@@ -30,22 +29,23 @@ Console.WriteFromString("&b'Hello &r'World&g'!");
 ```
 
 There are _"color stamps"_ helping you in your work:
- - `&'` / `&w'` - White
- - `&bl'` - Black
- - `&b'` - BLue
- - `&c'` - Cyan
- - `&db'` - Dark Blue
- - `&dc'` - Dark Cyan
- - `&dgr'` - Dark Gray
- - `&dg'` - Dark Green
- - `&dm'` - Dark Magenta
- - `&dr'` - Dark Red
- - `&dy'` - Dark Yellow
- - `&gr'` - Gray
- - `&g'` - Green
- - `&m'` - Magenta
- - `&r'` - Red
- - `&y'` - Yellow
+
+- `&'` / `&w'` - White
+- `&bl'` - Black
+- `&b'` - BLue
+- `&c'` - Cyan
+- `&db'` - Dark Blue
+- `&dc'` - Dark Cyan
+- `&dgr'` - Dark Gray
+- `&dg'` - Dark Green
+- `&dm'` - Dark Magenta
+- `&dr'` - Dark Red
+- `&dy'` - Dark Yellow
+- `&gr'` - Gray
+- `&g'` - Green
+- `&m'` - Magenta
+- `&r'` - Red
+- `&y'` - Yellow
 
 ### You can also create easy menus:
 
@@ -90,7 +90,7 @@ List<int> chosenOptions = menu.Show(allowEscape: false);
 
 foreach (int option in chosenOptions)
 {
-    ConsoleColors.WriteLine($"Chosen Index: {option}, Chosen Option Name: {options[option].name}, Chosen Option Name: {options[option].value}", Green);
+    ConsoleColors.WriteLine($"Chosen Index: {option}, Chosen Option Name: {options[option].name}, Chosen Option Value: {options[option].value}", Green);
 }
 ```
 

@@ -3,15 +3,15 @@ using static GreatConsole.ConsoleColors;
 
 namespace GreatConsole;
 
-public class MenuOption<T>
+public class MenuOption
 {
     public string name;
-    public T value;
+    public object value;
 
     public AllowedColor standardColor;
     public AllowedColor selectedColor;
 
-    public MenuOption(string _name, T _value, AllowedColor _standardColor = DarkYellow, AllowedColor _selectedColor = White)
+    public MenuOption(string _name, object _value, AllowedColor _standardColor = DarkYellow, AllowedColor _selectedColor = White)
     {
         name = _name.ToString()!;
         value = _value;

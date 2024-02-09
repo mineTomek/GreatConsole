@@ -58,13 +58,13 @@ For single-choice use this code:
 using static GreatConsole.ConsoleColors.AllowedColor;
 using GreatConsole;
 
-MenuOption<object>[] options = new MenuOption<object>[] {
-    new MenuOption<object>("Option 1", 1),
-    new MenuOption<object>("Option 2", "second option", DarkGreen, Green),
-    new MenuOption<object>("Option 3", new object[] { "option", "number", 3 }, Cyan, Yellow),
+MenuOption[] options = new MenuOption[] {
+    new MenuOption("Option 1", 1),
+    new MenuOption("Option 2", "second option", DarkGreen, Green),
+    new MenuOption("Option 3", new object[] { "option", "number", 3 }, Cyan, Yellow),
 };
 
-ConsoleMenu<object> menu = new ConsoleMenu<object>("Choose option: ", options.ToArray());
+ConsoleMenu menu = new ConsoleMenu("Choose option: ", options.ToArray());
 
 int index = menu.Show(allowEscape: false);
 
@@ -78,13 +78,13 @@ And for multi-choice use this:
 using static GreatConsole.ConsoleColors.AllowedColor;
 using GreatConsole;
 
-MenuOption<object>[] options = new MenuOption<object>[] {
-    new MenuOption<object>("Option 1", "first option"),
-    new MenuOption<object>("Option 2", 2, DarkGreen, Green),
-    new MenuOption<object>("Option 3", new string[] { "this", "can", "be", "anything" }, Cyan, Yellow),
+MenuOption[] options = new MenuOption[] {
+    new MenuOption("Option 1", "first option"),
+    new MenuOption("Option 2", 2, DarkGreen, Green),
+    new MenuOption("Option 3", new string[] { "this", "can", "be", "anything" }, Cyan, Yellow),
 };
 
-ConsoleMultichoiceMenu<object> menu = new ConsoleMultichoiceMenu<object>("Choose option: ", options.ToArray());
+ConsoleMultichoiceMenu menu = new ConsoleMultichoiceMenu("Choose option: ", options.ToArray());
 
 List<int> chosenOptions = menu.Show(allowEscape: false);
 

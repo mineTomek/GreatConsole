@@ -3,15 +3,15 @@ using static GreatConsole.ConsoleColors;
 
 namespace GreatConsole;
 
-public class ConsoleMultichoiceMenu<T>
+public class ConsoleMultichoiceMenu
 {
     readonly AllowedColor arrowColor;
 
-    readonly MenuOption<T>[] options;
+    readonly MenuOption[] options;
 
     readonly string message;
 
-    public ConsoleMultichoiceMenu(string _message, MenuOption<T>[] _options, AllowedColor _arrowColor = Yellow)
+    public ConsoleMultichoiceMenu(string _message, MenuOption[] _options, AllowedColor _arrowColor = Yellow)
     {
         arrowColor = _arrowColor;
         options = _options;

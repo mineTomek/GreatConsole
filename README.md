@@ -26,7 +26,7 @@ We got you covered!
 using Console = GreatConsole.ConsoleColors;
 
 // This code will print blue (&b') "Hello", red (&r') "World" and green (&g') "!".
-Console.WriteFromString("&b'Hello &r'World&g!");
+Console.WriteFromString("&b'Hello &r'World&g'!");
 ```
 
 There are _"color stamps"_ helping you in your work:

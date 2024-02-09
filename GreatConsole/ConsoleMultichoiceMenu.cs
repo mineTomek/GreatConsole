@@ -18,7 +18,7 @@ public class ConsoleMultichoiceMenu
         message = _message;
     }
 
-    public List<int>? Show(int startIndex = 0)
+    public List<int> Show(int startIndex = 0)
     {
         int pointingIndex = startIndex;
 
@@ -66,7 +66,7 @@ public class ConsoleMultichoiceMenu
                 case ConsoleKey.Enter:
                     return selectedIndexes;
                 case ConsoleKey.Escape:
-                    return null;
+                    return new List<int>();
                 default:
                     break;
             }

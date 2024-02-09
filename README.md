@@ -71,6 +71,28 @@ ConsoleMenu menu = new ConsoleMenu("Choose option: ", options.ToArray());
 ConsoleColors.WriteLine($"Selected Index: {selectedIndex}, Selected Option Name: {selectedOption}", Green);
 ```
 
+Multi-choice allows the user to select multiple options. The option is added to the selection using the Space key and the interaction is ended with the Enter key. \
+And for multi-choice use this:
+
+```csharp
+using static GreatConsole.ConsoleColors.AllowedColor;
+using GreatConsole;
+
+ConsoleMultichoiceMenu.MenuOption[] options = new ConsoleMultichoiceMenu.MenuOption[] {
+    new ConsoleMultichoiceMenu.MenuOption("Option 1"),
+    new ConsoleMultichoiceMenu.MenuOption("Option 2", DarkGreen, Green),
+    new ConsoleMultichoiceMenu.MenuOption("Option 3", Cyan, Yellow),
+};
+
+ConsoleMultichoiceMenu menu = new ConsoleMultichoiceMenu("Choose option: ", options.ToArray());
+
+List<int> chosenOptions = menu.Show();
+
+foreach (int option in chosenOptions) {
+    ConsoleColors.WriteLine($"Chosen Index: {option}, Chosen Option Name: {options[option].name}", Green);
+}
+```
+
 ## How to install it
 
 You have two options:

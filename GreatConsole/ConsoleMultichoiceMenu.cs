@@ -11,11 +11,11 @@ public class ConsoleMultichoiceMenu
 
     readonly string message;
 
-    public ConsoleMultichoiceMenu(string _message, MenuOption[] _options, AllowedColor _arrowColor = Yellow)
+    public ConsoleMultichoiceMenu(string message, MenuOption[] options, AllowedColor arrowColor = Yellow)
     {
-        arrowColor = _arrowColor;
-        options = _options;
-        message = _message;
+        this.arrowColor = arrowColor;
+        this.options = options;
+        this.message = message;
     }
 
     public List<int> Show(int startIndex = 0, bool allowEscape = true)
@@ -34,11 +34,11 @@ public class ConsoleMultichoiceMenu
             {
                 if (i == pointingIndex)
                 {
-                    Write("\t> ", arrowColor);
+                    Write("  > ", arrowColor);
                 }
                 else
                 {
-                    Write("\t  ");
+                    Write("    ");
                 }
 
                 WriteLine(options[i].name, selectedIndexes.Contains(i) ? options[i].selectedColor : options[i].standardColor);
@@ -70,8 +70,6 @@ public class ConsoleMultichoiceMenu
                     {
                         return new List<int>();
                     }
-                    break;
-                default:
                     break;
             }
 

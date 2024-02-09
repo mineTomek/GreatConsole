@@ -11,13 +11,13 @@ public class MenuOption
     public AllowedColor standardColor;
     public AllowedColor selectedColor;
 
-    public MenuOption(string _name, object _value, AllowedColor _standardColor = DarkYellow, AllowedColor _selectedColor = White)
+    public MenuOption(string name, object value, AllowedColor standardColor = DarkYellow, AllowedColor selectedColor = White)
     {
-        name = _name.ToString()!;
-        value = _value;
+        this.name = name.ToString();
+        this.value = value;
 
-        standardColor = _standardColor;
-        selectedColor = _selectedColor;
+        this.standardColor = standardColor;
+        this.selectedColor = selectedColor;
     }
 }
 

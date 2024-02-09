@@ -18,13 +18,11 @@ public class ConsoleMenu<T>
         message = _message;
     }
 
-    public (int, string) Show(int startIndex = 0, bool allowEscape = true)
+    public int Show(int startIndex = 0, bool allowEscape = true)
     {
-        bool selected = false;
-
         int selectedIndex = startIndex;
 
-        while (!selected)
+        while (true)
         {
             Clear();
 
@@ -54,11 +52,11 @@ public class ConsoleMenu<T>
                     selectedIndex++;
                     break;
                 case ConsoleKey.Enter:
-                    return (selectedIndex, options[selectedIndex].name);
+                    return selectedIndex;
                 case ConsoleKey.Escape:
                     if (allowEscape)
                     {
-                        return (-1, string.Empty);
+                        return -1;
                     }
                     break;
                 default:
@@ -73,9 +71,5 @@ public class ConsoleMenu<T>
                 selectedIndex = 0;
             }
         }
-
-        NewLine();
-
-        return (selectedIndex, options[selectedIndex].name);
     }
 }

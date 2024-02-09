@@ -18,7 +18,7 @@ public class ConsoleMenu
         message = _message;
     }
 
-    public (int, string) Show(int startIndex = 0)
+    public (int, string) Show(int startIndex = 0, bool allowEscape = true)
     {
         bool selected = false;
 
@@ -56,7 +56,11 @@ public class ConsoleMenu
                 case ConsoleKey.Enter:
                     return (selectedIndex, options[selectedIndex].name);
                 case ConsoleKey.Escape:
-                    return (-1, string.Empty);
+                    if (allowEscape)
+                    {
+                        return (-1, string.Empty);
+                    }
+                    break;
                 default:
                     break;
             }

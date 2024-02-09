@@ -9,7 +9,7 @@ NuGet package for various console utilities
 
 ```csharp
 // You can transform all your apps  by replacing "System.Console" with "ConsoleColors" class.
-// And (almost) everything will still work!
+// And most methods will still work!
 using Console = GreatConsole.ConsoleColors;
 
 // You don't have to type "ConsoleUtilities.ConsoleColors.AllowedColor" all the time.
@@ -49,23 +49,26 @@ There are _"color stamps"_ helping you in your work:
 
 ### You can also create easy menus:
 
-Just use this code:
+There are two types of menus: single-choice and multi-choice.
+
+Single-choice allows user to use arrow keys to select one of the options and press the Enter key to choose it. \
+For single-choice use this code:
 
 ```csharp
 using static GreatConsole.ConsoleColors.AllowedColor;
 using GreatConsole;
 
-GreatConsole.MenuOption[] options = GreatConsole.MenuOption[] {
-    new GreatConsole.MenuOption("Option 1"),
-    new GreatConsole.MenuOption("Option 2", DarkGreen, Green),
-    new GreatConsole.MenuOption("Option 3", Cyan, Yellow),
-}
+ConsoleMenu.MenuOption[] options = new ConsoleMenu.MenuOption[] {
+    new ConsoleMenu.MenuOption("Option 1"),
+    new ConsoleMenu.MenuOption("Option 2", DarkGreen, Green),
+    new ConsoleMenu.MenuOption("Option 3", Cyan, Yellow),
+};
 
-ConsoleMenu menu = new ConsoleMenu(options.ToArray());
+ConsoleMenu menu = new ConsoleMenu("Choose option: ", options.ToArray());
 
-(int selectedIndex, string selectedOption) = menu.Show(startIndex);
+(int selectedIndex, string selectedOption) = menu.Show();
 
-ConsoleColors.WriteLine($"Selected Index: {selectedIndex}, Selected Option: {selectedOption}", Green);
+ConsoleColors.WriteLine($"Selected Index: {selectedIndex}, Selected Option Name: {selectedOption}", Green);
 ```
 
 ## How to install it

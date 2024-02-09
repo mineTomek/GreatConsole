@@ -9,11 +9,11 @@
     <description>NuGet package for various console utilities</description>
     <PackageId>GreatConsole</PackageId>
     <Authors>mineTomek</Authors>
-    <Version>1.1.0</Version>
+    <Version>1.1.1</Version>
 
     <RepositoryUrl>https://github.com/mineTomek/GreatConsole</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <ReleaseVersion>1.1.0</ReleaseVersion>
+    <ReleaseVersion>1.1.1</ReleaseVersion>
     <Configurations>Release;Debug</Configurations>
   </PropertyGroup>
 

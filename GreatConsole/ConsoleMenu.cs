@@ -11,20 +11,18 @@ public class ConsoleMenu
 
     readonly string message;
 
-    public ConsoleMenu(string _message, MenuOption[] _options, AllowedColor _arrowColor = Yellow)
+    public ConsoleMenu(string message, MenuOption[] options, AllowedColor arrowColor = Yellow)
     {
-        arrowColor = _arrowColor;
-        options = _options;
-        message = _message;
+        this.arrowColor = arrowColor;
+        this.options = options;
+        this.message = message;
     }
 
-    public (int, string) Show(int startIndex = 0)
+    public int Show(int startIndex = 0, bool allowEscape = true)
     {
-        bool selected = false;
-
         int selectedIndex = startIndex;
 
-        while (!selected)
+        while (true)
         {
             Clear();
 
@@ -34,11 +32,12 @@ public class ConsoleMenu
             {
                 if (i == selectedIndex)
                 {
-                    Write("\t> ", arrowColor);
+                    Write("  > ", arrowColor);
                     WriteLine(options[i].name, options[i].selectedColor);
-                } else
+                }
+                else
                 {
-                    Write("\t  ");
+                    Write("    ");
                     WriteLine(options[i].name, options[i].standardColor);
                 }
             }
@@ -54,38 +53,23 @@ public class ConsoleMenu
                     selectedIndex++;
                     break;
                 case ConsoleKey.Enter:
-                    return (selectedIndex, options[selectedIndex].name);
+                    return selectedIndex;
                 case ConsoleKey.Escape:
-                    return (-1, string.Empty);
-                default:
+                    if (allowEscape)
+                    {
+                        return -1;
+                    }
                     break;
             }
 
             if (selectedIndex < 0)
             {
                 selectedIndex = options.Length - 1;
-            } else if (selectedIndex >= options.Length)
+            }
+            else if (selectedIndex >= options.Length)
             {
                 selectedIndex = 0;
             }
-        }
-
-        NewLine();
-
-        return (selectedIndex, options[selectedIndex].name);
-    }
-
-    public class MenuOption
-    {
-        public string name;
-        public AllowedColor standardColor;
-        public AllowedColor selectedColor;
-
-        public MenuOption(object _name, AllowedColor _standardColor = DarkYellow, AllowedColor _selectedColor = White)
-        {
-            name = _name.ToString()!;
-            standardColor = _standardColor;
-            selectedColor = _selectedColor;
         }
     }
 }

@@ -11,14 +11,14 @@ public class ConsoleMultichoiceMenu
 
     readonly string message;
 
-    public ConsoleMultichoiceMenu(string _message, MenuOption[] _options, AllowedColor _arrowColor = Yellow)
+    public ConsoleMultichoiceMenu(string message, MenuOption[] options, AllowedColor arrowColor = Yellow)
     {
-        arrowColor = _arrowColor;
-        options = _options;
-        message = _message;
+        this.arrowColor = arrowColor;
+        this.options = options;
+        this.message = message;
     }
 
-    public List<int>? Show(int startIndex = 0)
+    public List<int> Show(int startIndex = 0, bool allowEscape = true)
     {
         int pointingIndex = startIndex;
 
@@ -34,11 +34,11 @@ public class ConsoleMultichoiceMenu
             {
                 if (i == pointingIndex)
                 {
-                    Write("\t> ", arrowColor);
+                    Write("  > ", arrowColor);
                 }
                 else
                 {
-                    Write("\t  ");
+                    Write("    ");
                 }
 
                 WriteLine(options[i].name, selectedIndexes.Contains(i) ? options[i].selectedColor : options[i].standardColor);
@@ -66,8 +66,10 @@ public class ConsoleMultichoiceMenu
                 case ConsoleKey.Enter:
                     return selectedIndexes;
                 case ConsoleKey.Escape:
-                    return null;
-                default:
+                    if (allowEscape)
+                    {
+                        return new List<int>();
+                    }
                     break;
             }
 
@@ -78,20 +80,6 @@ public class ConsoleMultichoiceMenu
             {
                 pointingIndex = 0;
             }
-        }
-    }
-
-    public class MenuOption
-    {
-        public string name;
-        public AllowedColor standardColor;
-        public AllowedColor selectedColor;
-
-        public MenuOption(object _name, AllowedColor _standardColor = DarkYellow, AllowedColor _selectedColor = White)
-        {
-            name = _name.ToString()!;
-            standardColor = _standardColor;
-            selectedColor = _selectedColor;
         }
     }
 }

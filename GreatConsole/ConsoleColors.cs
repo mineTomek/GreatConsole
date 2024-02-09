@@ -21,7 +21,7 @@ public static class ConsoleColors
         {
             ConsoleColor lastColor = Console.ForegroundColor;
 
-            Console.ForegroundColor = (ConsoleColor)((int)color);
+            Console.ForegroundColor = (ConsoleColor)(int)color;
 
             Console.WriteLine(obj);
 
@@ -53,7 +53,7 @@ public static class ConsoleColors
 
     public static string? ReadLine(AllowedColor? color = null)
     {
-        string? output = null;
+        string? output;
 
         if (color == null)
         {
@@ -97,8 +97,6 @@ public static class ConsoleColors
     public static void WriteFromString(string str)
     {
         str = str.Trim();
-
-        Dictionary<string, AllowedColor> textWithColors = new Dictionary<string, AllowedColor>();
 
         ColorParser parser = new ColorParser(str);
 

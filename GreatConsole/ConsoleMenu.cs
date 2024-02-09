@@ -11,11 +11,11 @@ public class ConsoleMenu
 
     readonly string message;
 
-    public ConsoleMenu(string _message, MenuOption[] _options, AllowedColor _arrowColor = Yellow)
+    public ConsoleMenu(string message, MenuOption[] options, AllowedColor arrowColor = Yellow)
     {
-        arrowColor = _arrowColor;
-        options = _options;
-        message = _message;
+        this.arrowColor = arrowColor;
+        this.options = options;
+        this.message = message;
     }
 
     public int Show(int startIndex = 0, bool allowEscape = true)
@@ -32,11 +32,12 @@ public class ConsoleMenu
             {
                 if (i == selectedIndex)
                 {
-                    Write("\t> ", arrowColor);
+                    Write("  > ", arrowColor);
                     WriteLine(options[i].name, options[i].selectedColor);
-                } else
+                }
+                else
                 {
-                    Write("\t  ");
+                    Write("    ");
                     WriteLine(options[i].name, options[i].standardColor);
                 }
             }
@@ -59,14 +60,13 @@ public class ConsoleMenu
                         return -1;
                     }
                     break;
-                default:
-                    break;
             }
 
             if (selectedIndex < 0)
             {
                 selectedIndex = options.Length - 1;
-            } else if (selectedIndex >= options.Length)
+            }
+            else if (selectedIndex >= options.Length)
             {
                 selectedIndex = 0;
             }

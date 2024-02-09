@@ -4,7 +4,7 @@ NuGet package for various console utilities
 
 ## What does it do
 
-### With this package it is easy to change colors of printed text:
+### Colored Text
 
 ```csharp
 // You can transform all your apps  by replacing "System.Console" with "ConsoleColors" class.
@@ -47,11 +47,12 @@ There are _"color stamps"_ helping you in your work:
 - `&r'` - Red
 - `&y'` - Yellow
 
-### You can also create easy menus:
+### Single-choice and multi-choice menus
 
 Menus allow user to choose from a bunch of options (`GreatConsole.MenuOption`). Each options consists of a name (`string`) and a value (`object`). \
 Constructor of a menu takes the prompt and an array of options. It doesn't appear when the constructor is called and you have to run the `Show()` method on the menu. \
 The `Show()` method has two optional parameters:
+
 - `startIndex` changes which option is selected by default when shown (default is `0`)
 - `allowEscape` changes whether the user can press the Escape key to exit the menu and return `-1` for single-choice menu and an empty `List<int>` for multi-choice menus (default is `true`)
 
@@ -99,6 +100,31 @@ foreach (int option in chosenOptions)
     ConsoleColors.WriteLine($"Chosen Index: {option}, Chosen Option Name: {options[option].name}, Chosen Option Value: {options[option].value}", Green);
 }
 ```
+
+### Progress Bars
+
+Last functionality of this package is progress bars.
+
+After using the constructor, same as with the menus, it won't actually appear until you invoke the `Present()` method. This method writes the progress bar initially then you can update the progress bar using the `Update()` method. It takes a float percentage (`0.5f` for 50%, `0.35f` for 35% and so on). \
+Important note, You can't write anything between the invoking `Present()` and each invoking of `Update()`, as the the `Update()` method relies on the cursor being on the end of the progress bar.
+
+```csharp
+using GreatConsole;
+
+ConsoleProgressBar bar = new ConsoleProgressBar();
+
+bar.Present();
+
+for (int i = 0; i <= 20; i++) {
+    bar.Update(i/20f);
+
+    Thread.Sleep(100);
+}
+```
+
+This example code will show a progress bar and update every 100 milliseconds until it reaches 100% after 2.1 seconds.
+
+The 'f' after the '20' is important because it makes the division return float values instead of rounding to an integer.
 
 ## How to install it
 

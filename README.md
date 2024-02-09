@@ -58,17 +58,17 @@ For single-choice use this code:
 using static GreatConsole.ConsoleColors.AllowedColor;
 using GreatConsole;
 
-MenuOption[] options = new MenuOption[] {
-    new MenuOption("Option 1"),
-    new MenuOption("Option 2", DarkGreen, Green),
-    new MenuOption("Option 3", Cyan, Yellow),
+MenuOption<object>[] options = new MenuOption<object>[] {
+    new MenuOption<object>("Option 1", 1),
+    new MenuOption<object>("Option 2", "second option", DarkGreen, Green),
+    new MenuOption<object>("Option 3", new object[] { "option", "number", 3 }, Cyan, Yellow),
 };
 
-ConsoleMenu menu = new ConsoleMenu("Choose option: ", options.ToArray());
+ConsoleMenu<object> menu = new ConsoleMenu<object>("Choose option: ", options.ToArray());
 
 (int selectedIndex, string selectedOption) = menu.Show(allowEscape: false);
 
-ConsoleColors.WriteLine($"Selected Index: {selectedIndex}, Selected Option Name: {selectedOption}", Green);
+ConsoleColors.WriteLine($"Selected Index: {selectedIndex}, Selected Option Name: {selectedOption}, Chosen Option Name: {options[selectedIndex].value}", Green);
 ```
 
 Multi-choice allows the user to select multiple options. The option is added to the selection using the Space key and the interaction is ended with the Enter key. \
@@ -78,18 +78,19 @@ And for multi-choice use this:
 using static GreatConsole.ConsoleColors.AllowedColor;
 using GreatConsole;
 
-MenuOption[] options = new MenuOption[] {
-    new MenuOption("Option 1"),
-    new MenuOption("Option 2", DarkGreen, Green),
-    new MenuOption("Option 3", Cyan, Yellow),
+MenuOption<object>[] options = new MenuOption<object>[] {
+    new MenuOption<object>("Option 1", "first option"),
+    new MenuOption<object>("Option 2", 2, DarkGreen, Green),
+    new MenuOption<object>("Option 3", new string[] { "this", "can", "be", "anything" }, Cyan, Yellow),
 };
 
-ConsoleMultichoiceMenu menu = new ConsoleMultichoiceMenu("Choose option: ", options.ToArray());
+ConsoleMultichoiceMenu<object> menu = new ConsoleMultichoiceMenu<object>("Choose option: ", options.ToArray());
 
 List<int> chosenOptions = menu.Show(allowEscape: false);
 
-foreach (int option in chosenOptions) {
-    ConsoleColors.WriteLine($"Chosen Index: {option}, Chosen Option Name: {options[option].name}", Green);
+foreach (int option in chosenOptions)
+{
+    ConsoleColors.WriteLine($"Chosen Index: {option}, Chosen Option Name: {options[option].name}, Chosen Option Name: {options[option].value}", Green);
 }
 ```
 

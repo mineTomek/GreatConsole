@@ -66,7 +66,7 @@ ConsoleMenu.MenuOption[] options = new ConsoleMenu.MenuOption[] {
 
 ConsoleMenu menu = new ConsoleMenu("Choose option: ", options.ToArray());
 
-(int selectedIndex, string selectedOption) = menu.Show();
+(int selectedIndex, string selectedOption) = menu.Show(allowEscape: false);
 
 ConsoleColors.WriteLine($"Selected Index: {selectedIndex}, Selected Option Name: {selectedOption}", Green);
 ```
@@ -86,7 +86,7 @@ ConsoleMultichoiceMenu.MenuOption[] options = new ConsoleMultichoiceMenu.MenuOpt
 
 ConsoleMultichoiceMenu menu = new ConsoleMultichoiceMenu("Choose option: ", options.ToArray());
 
-List<int> chosenOptions = menu.Show();
+List<int> chosenOptions = menu.Show(allowEscape: false);
 
 foreach (int option in chosenOptions) {
     ConsoleColors.WriteLine($"Chosen Index: {option}, Chosen Option Name: {options[option].name}", Green);

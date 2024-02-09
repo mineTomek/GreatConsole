@@ -32,7 +32,7 @@ There are _"color stamps"_ helping you in your work:
 
 - `&'` / `&w'` - White
 - `&bl'` - Black
-- `&b'` - BLue
+- `&b'` - Blue
 - `&c'` - Cyan
 - `&db'` - Dark Blue
 - `&dc'` - Dark Cyan
@@ -49,10 +49,16 @@ There are _"color stamps"_ helping you in your work:
 
 ### You can also create easy menus:
 
+Menus allow user to choose from a bunch of options (`GreatConsole.MenuOption`). Each options consists of a name (`string`) and a value (`object`). \
+Constructor of a menu takes the prompt and an array of options. It doesn't appear when the constructor is called and you have to run the `Show()` method on the menu. \
+The `Show()` method has two optional parameters:
+- `startIndex` changes which option is selected by default when shown (default is `0`)
+- `allowEscape` changes whether the user can press the Escape key to exit the menu and return `-1` for single-choice menu and an empty `List<int>` for multi-choice menus (default is `true`)
+
 There are two types of menus: single-choice and multi-choice.
 
 Single-choice allows user to use arrow keys to select one of the options and press the Enter key to choose it. \
-For single-choice use this code:
+For single-choice menu use this code:
 
 ```csharp
 using static GreatConsole.ConsoleColors.AllowedColor;
@@ -64,7 +70,7 @@ MenuOption[] options = new MenuOption[] {
     new MenuOption("Option 3", new object[] { "option", "number", 3 }, Cyan, Yellow),
 };
 
-ConsoleMenu menu = new ConsoleMenu("Choose option: ", options.ToArray());
+ConsoleMenu menu = new ConsoleMenu("Choose option: ", options);
 
 int index = menu.Show(allowEscape: false);
 
@@ -72,7 +78,7 @@ ConsoleColors.WriteLine($"Selected Index: {index}, Selected Option Name: {option
 ```
 
 Multi-choice allows the user to select multiple options. The option is added to the selection using the Space key and the interaction is ended with the Enter key. \
-And for multi-choice use this:
+And for multi-choice menu use this:
 
 ```csharp
 using static GreatConsole.ConsoleColors.AllowedColor;
@@ -84,7 +90,7 @@ MenuOption[] options = new MenuOption[] {
     new MenuOption("Option 3", new string[] { "this", "can", "be", "anything" }, Cyan, Yellow),
 };
 
-ConsoleMultichoiceMenu menu = new ConsoleMultichoiceMenu("Choose option: ", options.ToArray());
+ConsoleMultichoiceMenu menu = new ConsoleMultichoiceMenu("Choose option: ", options);
 
 List<int> chosenOptions = menu.Show(allowEscape: false);
 

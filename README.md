@@ -58,10 +58,10 @@ For single-choice use this code:
 using static GreatConsole.ConsoleColors.AllowedColor;
 using GreatConsole;
 
-ConsoleMenu.MenuOption[] options = new ConsoleMenu.MenuOption[] {
-    new ConsoleMenu.MenuOption("Option 1"),
-    new ConsoleMenu.MenuOption("Option 2", DarkGreen, Green),
-    new ConsoleMenu.MenuOption("Option 3", Cyan, Yellow),
+MenuOption[] options = new MenuOption[] {
+    new MenuOption("Option 1"),
+    new MenuOption("Option 2", DarkGreen, Green),
+    new MenuOption("Option 3", Cyan, Yellow),
 };
 
 ConsoleMenu menu = new ConsoleMenu("Choose option: ", options.ToArray());
@@ -78,10 +78,10 @@ And for multi-choice use this:
 using static GreatConsole.ConsoleColors.AllowedColor;
 using GreatConsole;
 
-ConsoleMultichoiceMenu.MenuOption[] options = new ConsoleMultichoiceMenu.MenuOption[] {
-    new ConsoleMultichoiceMenu.MenuOption("Option 1"),
-    new ConsoleMultichoiceMenu.MenuOption("Option 2", DarkGreen, Green),
-    new ConsoleMultichoiceMenu.MenuOption("Option 3", Cyan, Yellow),
+MenuOption[] options = new MenuOption[] {
+    new MenuOption("Option 1"),
+    new MenuOption("Option 2", DarkGreen, Green),
+    new MenuOption("Option 3", Cyan, Yellow),
 };
 
 ConsoleMultichoiceMenu menu = new ConsoleMultichoiceMenu("Choose option: ", options.ToArray());

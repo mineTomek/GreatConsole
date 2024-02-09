@@ -66,9 +66,9 @@ MenuOption<object>[] options = new MenuOption<object>[] {
 
 ConsoleMenu<object> menu = new ConsoleMenu<object>("Choose option: ", options.ToArray());
 
-(int selectedIndex, string selectedOption) = menu.Show(allowEscape: false);
+int index = menu.Show(allowEscape: false);
 
-ConsoleColors.WriteLine($"Selected Index: {selectedIndex}, Selected Option Name: {selectedOption}, Chosen Option Name: {options[selectedIndex].value}", Green);
+ConsoleColors.WriteLine($"Selected Index: {index}, Selected Option Name: {options[index].name}, Chosen Option Value: {options[index].value}", Green);
 ```
 
 Multi-choice allows the user to select multiple options. The option is added to the selection using the Space key and the interaction is ended with the Enter key. \

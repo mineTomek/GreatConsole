@@ -49,7 +49,7 @@ There are _"color stamps"_ helping you in your work:
 
 ### Single-choice and multi-choice menus
 
-Menus allow user to choose from a bunch of options (`GreatConsole.MenuOption`). Each options consists of a name (`string`) and a value (`object`). \
+Menus allow user to choose from a bunch of options (`GreatConsole.MenuOption`). Each options consists of a name (`string`) and a value (`object?` it's by default null). \
 Constructor of a menu takes the prompt and an array of options. It doesn't appear when the constructor is called and you have to run the `Show()` method on the menu. \
 The `Show()` method has two optional parameters:
 
@@ -86,7 +86,7 @@ using static GreatConsole.ConsoleColors.AllowedColor;
 using GreatConsole;
 
 MenuOption[] options = new MenuOption[] {
-    new MenuOption("Option 1", "first option"),
+    new MenuOption("Option 1"), // It's by default null
     new MenuOption("Option 2", 2, DarkGreen, Green),
     new MenuOption("Option 3", new string[] { "this", "can", "be", "anything" }, Cyan, Yellow),
 };

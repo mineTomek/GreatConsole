@@ -113,7 +113,7 @@ using GreatConsole;
 
 ConsoleProgressBar bar = new ConsoleProgressBar();
 
-bar.Present();
+bar.Show();
 
 for (int i = 0; i <= 20; i++) {
     bar.Update(i/20f);

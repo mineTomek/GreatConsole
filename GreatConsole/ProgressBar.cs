@@ -22,7 +22,7 @@ public class ConsoleProgressBar
         consoleWidth = Console.WindowWidth;
     }
 
-    public void Present(float startValue = 0)
+    public void Show(float startValue = 0)
     {
         WriteProgressBar(startValue);
     }

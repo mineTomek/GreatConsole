@@ -2,6 +2,8 @@
 
 NuGet package for various console utilities
 
+Newest version is `1.1.2`
+
 ## What does it do
 
 ### Colored Text
@@ -49,7 +51,7 @@ There are _"color stamps"_ helping you in your work:
 
 ### Single-choice and multi-choice menus
 
-Menus allow user to choose from a bunch of options (`GreatConsole.MenuOption`). Each options consists of a name (`string`) and a value (`object`). \
+Menus allow user to choose from a bunch of options (`GreatConsole.MenuOption`). Each options consists of a name (`string`) and a value (`object?` it's by default null). \
 Constructor of a menu takes the prompt and an array of options. It doesn't appear when the constructor is called and you have to run the `Show()` method on the menu. \
 The `Show()` method has two optional parameters:
 
@@ -86,7 +88,7 @@ using static GreatConsole.ConsoleColors.AllowedColor;
 using GreatConsole;
 
 MenuOption[] options = new MenuOption[] {
-    new MenuOption("Option 1", "first option"),
+    new MenuOption("Option 1"), // It's by default null
     new MenuOption("Option 2", 2, DarkGreen, Green),
     new MenuOption("Option 3", new string[] { "this", "can", "be", "anything" }, Cyan, Yellow),
 };
@@ -101,19 +103,24 @@ foreach (int option in chosenOptions)
 }
 ```
 
+> [!TIP]
+> You can put the option array directly in menu's constructor and get it later using the `GetMenuOptions()` method in the menu instance, which works for both menu types.
+
 ### Progress Bars
 
 Last functionality of this package is progress bars.
 
-After using the constructor, same as with the menus, it won't actually appear until you invoke the `Present()` method. This method writes the progress bar initially then you can update the progress bar using the `Update()` method. It takes a float percentage (`0.5f` for 50%, `0.35f` for 35% and so on). \
-Important note, You can't write anything between the invoking `Present()` and each invoking of `Update()`, as the the `Update()` method relies on the cursor being on the end of the progress bar.
+After using the constructor, same as with the menus, it won't actually appear until you invoke the `Show()` method. This method writes the progress bar initially then you can update the progress bar using the `Update()` method. It takes a float percentage (`0.5f` for 50%, `0.35f` for 35% and so on). \
+
+> [!IMPORTANT]
+> You can't write anything between the invoking `Show()` and each invoking of `Update()`, as the the `Update()` method relies on the cursor being on the end of the progress bar.
 
 ```csharp
 using GreatConsole;
 
 ConsoleProgressBar bar = new ConsoleProgressBar();
 
-bar.Present();
+bar.Show();
 
 for (int i = 0; i <= 20; i++) {
     bar.Update(i/20f);

@@ -72,4 +72,9 @@ public class ConsoleMenu
             }
         }
     }
+
+    public MenuOption[] GetMenuOptions()
+    {
+        return options;
+    }
 }

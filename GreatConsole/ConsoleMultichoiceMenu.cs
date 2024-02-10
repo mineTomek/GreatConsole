@@ -82,4 +82,9 @@ public class ConsoleMultichoiceMenu
             }
         }
     }
+
+    public MenuOption[] GetMenuOptions()
+    {
+        return options;
+    }
 }

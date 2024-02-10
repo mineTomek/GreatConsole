@@ -108,8 +108,10 @@ foreach (int option in chosenOptions)
 
 Last functionality of this package is progress bars.
 
-After using the constructor, same as with the menus, it won't actually appear until you invoke the `Present()` method. This method writes the progress bar initially then you can update the progress bar using the `Update()` method. It takes a float percentage (`0.5f` for 50%, `0.35f` for 35% and so on). \
-Important note, You can't write anything between the invoking `Present()` and each invoking of `Update()`, as the the `Update()` method relies on the cursor being on the end of the progress bar.
+After using the constructor, same as with the menus, it won't actually appear until you invoke the `Show()` method. This method writes the progress bar initially then you can update the progress bar using the `Update()` method. It takes a float percentage (`0.5f` for 50%, `0.35f` for 35% and so on). \
+
+> [!IMPORTANT]
+> You can't write anything between the invoking `Show()` and each invoking of `Update()`, as the the `Update()` method relies on the cursor being on the end of the progress bar.
 
 ```csharp
 using GreatConsole;

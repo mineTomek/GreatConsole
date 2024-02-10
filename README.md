@@ -101,6 +101,9 @@ foreach (int option in chosenOptions)
 }
 ```
 
+> [!TIP]
+> You can put the option array directly in menu's constructor and get it later using the `GetMenuOptions()` method in the menu instance, which works for both menu types.
+
 ### Progress Bars
 
 Last functionality of this package is progress bars.

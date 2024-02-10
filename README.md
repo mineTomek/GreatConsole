@@ -2,6 +2,8 @@
 
 NuGet package for various console utilities
 
+Newest version is `1.1.2`
+
 ## What does it do
 
 ### Colored Text

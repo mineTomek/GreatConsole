@@ -1,4 +1,4 @@
-name: Publich To NuGet
+name: Publish to NuGet
 on:
   push:
     branches:
@@ -25,7 +25,7 @@ jobs:
           PROJECT_FILE_PATH: GreatConsole/GreatConsole.csproj
 
           # NuGet package id, used for version detection & defaults to project name
-          PACKAGE_NAME: Great Console
+          PACKAGE_NAME: GreatConsole
 
           # API key to authenticate with NuGet server
           NUGET_KEY: ${{secrets.NUGET_API_KEY}}

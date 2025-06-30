@@ -1,4 +1,4 @@
-﻿# ConsoleUtilities
+# GreatConsole
 
 NuGet package for various console utilities
 
@@ -16,7 +16,7 @@ using Console = GreatConsole.ConsoleColors;
 // You don't have to type "ConsoleUtilities.ConsoleColors.AllowedColor" all the time.
 using static GreatConsole.ConsoleColors.AllowedColor;
 
-Console.WriteLine("Hello World!", Green); // It will pring "Hello World!" in green
+Console.WriteLine("Hello World!", Green); // It will print "Hello World!" in green
 ```
 
 Don't want whole line to be same color?
